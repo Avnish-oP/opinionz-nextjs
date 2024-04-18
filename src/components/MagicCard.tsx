@@ -38,13 +38,13 @@ export default function MagicCard({ icon, title, description }: MagicCardProps) 
             </div>
           </AnimatePresence>
           <div className="relative py-10 z-20 items-center flex flex-col">
-            <div className=" flex-col text-center md:group-hover/canvas-card:-translate-y-4 -translate-y-4 md:translate-y-12 group-hover/canvas-card:opacity- transition duration-200 w-full  mx-auto flex items-center justify-center">
+            <div className=" flex-col text-center md:group-hover/canvas-card:-translate-y-4 -translate-y-4 lg:translate-y-12 group-hover/canvas-card:opacity- transition duration-200 w-full  mx-auto flex items-center justify-center">
               <h2 className="md:text-4xl text-3xl font-bold">{title}</h2>
               <div className=" h-[30%]">
-                <Image className="md:w-32 w-20" src={icon as string} alt="{feature.title}" />
+                <Image className="lg:w-32 md:w-24 w-20" src={icon as string} alt="{feature.title}" />
               </div>
             </div>
-            <h2 className="dark:text-white text-lg md:text-xl opacity-100 md:opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+            <h2 className="dark:text-white text-lg md:text-xl opacity-100 lg:opacity-0 group-hover/canvas-card:opacity-100 relative z-10 mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
               {description}
             </h2>
           </div>
