@@ -4,13 +4,14 @@ import MagicButton from "./Magicbutton";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import Link from "next/link";
 
 export default function Home() {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       className="h-screen  flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black w-full gap-4 mx-auto px-8 relativ"
     >
       <div className="lg:text-7xl md:text-6xl text-4xl justify-center flex flex-col  font-medium text-center text-white relative z-20 lg:w-[80%] w-full mx-auto">
@@ -31,7 +32,9 @@ export default function Home() {
             placeholder="Enter your email"
           />
           <div className=" md:absolute m-4  flex md:justify-center md:mr-1">
+            <Link href="/signup">
             <MagicButton name="Get started" />
+            </Link>
           </div>
           <div className="mb-4 md:hidden">or</div>
           <div className=" md:hidden">
