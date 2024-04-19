@@ -9,11 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "mongodb": "^6.5.0",
+=======
+    "@radix-ui/react-label": "^2.0.2",
+    "@react-three/fiber": "^8.16.2",
+    "@tabler/icons-react": "^3.2.0",
+    "@types/three": "^0.163.0",
+    "axios": "^1.6.8",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.1.5",
+>>>>>>> 52e0405a74167fb37bdc2c8134ce47a1500f970a
     "mongoose": "^8.3.1",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
+    "react-element-to-jsx-string": "^15.0.0",
+    "react-hot-toast": "^2.4.1",
+    "tailwind-merge": "^2.2.2",
+    "three": "^0.163.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

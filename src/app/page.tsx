@@ -1,10 +1,31 @@
-import Image from "next/image";
+import Head from 'next/head';
+import Header from '../components/Header';
+import Landing from '../components/Landing';
+import Features from '../components/Features';
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="flex flex-col min-h-screen justify-center items-center">
-      <h1 className="font-bold antialiased text-gray-400 text-4xl">this is hompage</h1>
-      <h2 className="text-red-600">tailwind is working</h2>
-    </main>
+    <div>
+      <Header />
+      <Landing />
+      
+      <main className="container mx-auto ">
+        <Features />
+      </main>
+      <footer className="bg-[#030712] pb-10 text-center">
+        <div className='h-[1px] mb-10 bg-purple-800'></div>
+        <nav>
+          <a href="#" className="px-4">FAQ</a>
+          <a href="#" className="px-4">About Us</a>
+          <a href="#" className="px-4">Privacy Policy</a>
+          <a href="#" className="px-4">Contact</a>
+        </nav>
+        <div className='mt-2'>
+          <p className="text-white">©2024 opinionZ.com. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   );
-}
+};
+
+export default Home;
