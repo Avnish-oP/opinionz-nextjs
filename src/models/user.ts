@@ -10,7 +10,6 @@ export interface User extends Document {
   verifyToken: string;
   verifyTokenExpires: Date;
   verified: boolean;
-  createdAt: Date;
   agreedPosts: string[];
   disagreedPosts: string[];
   comments: string[];
@@ -45,7 +44,6 @@ const userSchema: Schema<User> = new Schema({
   verifyToken: { type: String, required: false },
   verifyTokenExpires: { type: Date, required: false },
   verified: { type: Boolean, required: false },
-  createdAt: { type: Date, required: true },
   agreedPosts: { type: [String], required: false },
   disagreedPosts: { type: [String], required: false },
   comments: { type: [String], required: false },
