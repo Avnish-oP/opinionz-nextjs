@@ -65,6 +65,7 @@ export async function POST(req: NextRequest) {
       await newUser.save();
     }
     const emailResponse = await sendMail(email, verifyToken, username);
+    console.log(emailResponse);
     if (!emailResponse.success) {
       return NextResponse.json(
         {
