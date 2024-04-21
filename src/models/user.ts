@@ -60,6 +60,6 @@ const commentSchema: Schema<Comments> = new Schema({
 });
 
 export const UserModel =
-  mongoose.model<User>("User", userSchema) || mongoose.models.User;
+  mongoose.models.User || mongoose.model<User>("User", userSchema);
 export const CommentModel =
-  mongoose.model<Comments>("Comment", commentSchema) || mongoose.models.Comment;
+  mongoose.models.Comment || mongoose.model<Comments>("Comment", commentSchema);
