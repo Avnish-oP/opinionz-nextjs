@@ -6,7 +6,8 @@ export const signupSchema = z.object({
     username: usernameValidation,
     email: z.string().email({message:"Invalid email address"}),
     password: z.string().min(8, {message:"Password is too short"}).max(20, {message:"Password is too long"}),
-    dateOfBirth: z.date().refine((date) => {
+    confirmPassword: z.string().min(8, {message:"password is too short"}).max(20, {message:"Password is too long"}),
+    dob: z.date().refine((date) => {
         const now = new Date();
         const age = now.getFullYear() - date.getFullYear();
         return age >= 13;

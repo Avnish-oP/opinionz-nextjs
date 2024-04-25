@@ -13,7 +13,6 @@ const sendMail = async (email: string, otp: string, username:string):Promise<Api
             react: verifyemailTemplate({ username, otp }),
             text: "Verify your email", // Add the 'text' property
         });
-        console.log(emailsent);
         return { success: true, message: `Email sent to ${email}`};
     } catch (error) {
         console.error("Error sending email", error);
