@@ -1,10 +1,10 @@
 import React from 'react'
-import SignupForm from "@/components/signupForm"
+import { useTheme } from 'next-themes'
 
 function page() {
   return (
-    <div className='flex justify-center items-center min-h-screen'>
-      <SignupForm/>
+    <div className='flex justify-center dark:bg-black items-center min-h-screen'>
+      <h1 className=''>signup page</h1>
     </div>
   )
 }

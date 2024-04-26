@@ -15,8 +15,10 @@ export async function GET(request:NextRequest){
         const queryParam = {
             username: searchParams.get("username"),
         }
+        // console.log("queryParam", queryParam.username);
         //validation using zod
         const result = UsernameQuerySchema.safeParse(queryParam);
+        console.log("result", result);
         if (!result.success){
             const usernameError = result.error.format().username?._errors || [];
             return NextResponse.json({
@@ -30,7 +32,7 @@ export async function GET(request:NextRequest){
             return NextResponse.json({
                 success:false,
                 message:"Username is already taken",
-            },{status:400});
+            },{status:200});
         }
         else{
             return NextResponse.json({
