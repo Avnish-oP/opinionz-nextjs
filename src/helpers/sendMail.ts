@@ -6,7 +6,7 @@ import verifyemailTemplate from "../../emails/verifyMailTemplate";
 const sendMail = async (email: string, otp: string, username:string):Promise<ApiResponse> => {
 
     try {
-        await resend.emails.send({
+        const emailsent=await resend.emails.send({
             from:'onboarding@resend.dev',
             to: email,
             subject: "Verify your opinionz account",

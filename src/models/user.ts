@@ -4,7 +4,7 @@ export interface User extends Document {
   username: string;
   email: string;
   password: string;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   userPosts: string[];
   interests: string[];
   verifyToken: string;
@@ -38,7 +38,7 @@ const userSchema: Schema<User> = new Schema({
     unique: true,
   },
   password: { type: String, required: true },
-  dateOfBirth: { type: Date, required: true },
+  dateOfBirth: { type: String, required: true },
   userPosts: { type: [String], required: false },
   interests: { type: [String], required: false },
   verifyToken: { type: String, required: false },

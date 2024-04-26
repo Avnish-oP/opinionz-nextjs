@@ -13,7 +13,7 @@ const verifyemailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
     <p>
         Your OTP is {otp}
     </p>
-    <a href={`${process.env.DOMAIN}/verifyemail?user=${username}`}></a>
+    <a href={`${process.env.DOMAIN}/verify-code?username=${username}`}>Click here to verify</a>
     
   </div>
 );

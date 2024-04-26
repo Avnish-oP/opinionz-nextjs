@@ -3,12 +3,14 @@ import { UserModel } from "@/models/user";
 import bcryptjs from "bcryptjs";
 import sendMail from "@/helpers/sendMail";
 import { NextRequest, NextResponse } from "next/server";
+import { date } from "zod";
 
 export async function POST(req: NextRequest) {
   await dbConnect();
 
   try {
-    const { username, email, password, dateOfBirth } = await req.json();
+    const { username, email, password, dob } = await req.json();
+    console.log(username, email, password, dob);
     const existingUser = await UserModel.findOne({
       username,
       isverified: true,
@@ -53,7 +55,7 @@ export async function POST(req: NextRequest) {
         username,
         email,
         password: hashedPassword,
-        dateOfBirth,
+        dateOfBirth: dob,
         verifyToken: verifyToken,
         verifyTokenExpires: expiryDate,
         verified: false,
