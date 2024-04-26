@@ -49,6 +49,7 @@ function page() {
           );
           if(response.data.success){
             form.clearErrors("username");
+            
           }
           else{
             form.setError("username", {
@@ -127,7 +128,7 @@ function page() {
                           setUsername(e.target.value);
                           
                         }}
-                        
+                        style={{ borderColor: !form.formState.errors.username ? 'green' : 'red' }}
                       />
                     </FormControl>
                     <FormMessage />
