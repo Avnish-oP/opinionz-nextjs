@@ -63,7 +63,6 @@ function page() {
               message: response.data.message,
             });
           }
-          console.log("response", response);
         } catch (error) {
           console.log("error checking username availability", error);
         }
@@ -77,8 +76,6 @@ function page() {
   }, [username]);
 
   const onSubmit = async (data: any) => {
-    // Convert dob string to Date object
-    console.log("data", data);
     setIsSubmitting(true);
     try {
       const response = await axios.post("/api/signup", {

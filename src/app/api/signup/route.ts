@@ -10,7 +10,6 @@ export async function POST(req: NextRequest) {
 
   try {
     const { username, email, password, dob } = await req.json();
-    console.log(username, email, password, dob);
     const existingUser = await UserModel.findOne({
       username,
       isverified: true,
