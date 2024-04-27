@@ -5,12 +5,10 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   await dbConnect();
   try {
-    const { code } = await request.json();
-    const { searchParams } = new URL(request.url);
-    const username = searchParams.get("username");
-    const decodedUsername = decodeURIComponent(username ?? "");
-    console.log(decodedUsername, code)
-    const user = await UserModel.findOne({ username: decodedUsername });
+    const {username, code } = await request.json();
+    
+    console.log(username, code);
+    const user = await UserModel.findOne({ username: username });
     if (!user) {
       return NextResponse.json(
         {

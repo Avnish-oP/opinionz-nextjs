@@ -10,7 +10,6 @@ export async function POST(req: NextRequest) {
 
   try {
     const { username, email, password, dob } = await req.json();
-    console.log(username, email, password, dob);
     const existingUser = await UserModel.findOne({
       username,
       isverified: true,
@@ -19,10 +18,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          message: "User already exists",
+          message: "Username already exists",
         },
         {
-          status: 400,
+          status: 200,
         }
       );
     }
@@ -33,10 +32,10 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             success: false,
-            message: "User already exists",
+            message: "Email is already in use",
           },
           {
-            status: 400,
+            status: 200,
           }
         );
       } else {
