@@ -1,11 +1,12 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { Post } from "./posts";
 
 export interface User extends Document {
   username: string;
   email: string;
   password: string;
   dateOfBirth: string;
-  userPosts: string[];
+  userPosts: Post[];
   interests: string[];
   verifyToken: string;
   verifyTokenExpires: Date;
