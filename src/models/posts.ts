@@ -22,4 +22,4 @@ export interface Post extends Document {
     comments: { type: [String], required: false },
   });
 
-  export const PostModel = mongoose.model<Post>("Post", postSchema) || mongoose.models.Post;
+  export const PostModel =mongoose.models.Post  || mongoose.model<Post>("Post", postSchema);

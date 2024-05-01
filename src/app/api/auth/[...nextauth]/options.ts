@@ -3,6 +3,7 @@ import { NextAuthOptions } from "next-auth";
 import bcrypt from "bcryptjs";
 import { UserModel } from "@/models/user";
 import dbConnect from "@/lib/dbConfig";
+import { NextResponse } from "next/server";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -39,7 +40,8 @@ export const authOptions: NextAuthOptions = {
           if (!isValid) {
             throw new Error("Incorrect password");
           } else {
-            return user;
+
+            return user ;
           }
         } catch (error: any) {
           throw new Error(error.message);
