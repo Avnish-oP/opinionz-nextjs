@@ -22,7 +22,7 @@ Opinionz is a platform where users can share their opinions anonymously, engage 
 
 To get a local copy up and running follow these simple steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/opinionz.git`
+1. Clone the repository: `git clone https://github.com/Avnish-oP/opinionz-nextjs`
 2. Install dependencies: `npm install`
 3. Set up MongoDB database and configure connection.
 4. Set up environment variables for authentication and OpenAI API key.
