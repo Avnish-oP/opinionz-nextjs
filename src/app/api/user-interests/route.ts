@@ -7,6 +7,8 @@ export async function POST(request: NextRequest) {
   try {
     const { username, interests } = await request.json();
     const user = await UserModel.findOne({ username: username });
+    console.log("User", username);
+    console.log("Interests", interests);
     if (!user) {
       return NextResponse.json(
         {

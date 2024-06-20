@@ -22,7 +22,7 @@ import { Input } from "@/components/ui/input";
 import { set } from "mongoose";
 import { Loader, Loader2 } from "lucide-react";
 
-function page() {
+function Page() {
   const [username, setUsername] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isUsernameAvailable, setIsUsernameAvailable] = useState(false);
@@ -243,7 +243,7 @@ function page() {
                 </button>
               </div>
               <div className="text-center">
-                Already have an account?
+                Already have an account{"?"}
                 <Link
                   className="text-blue-500 hover:underline"
                   href="/sign-in"
@@ -260,4 +260,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

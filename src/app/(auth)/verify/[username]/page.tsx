@@ -24,7 +24,7 @@ import { useParams, useRouter } from "next/navigation";
 import { verifySchema } from "@/schemas/verifySchema";
 import axios from "axios";
 
-function page() {
+function Page() {
   const router = useRouter();
   const params = useParams();
   const { toast } = useToast();
@@ -48,7 +48,7 @@ function page() {
           description: response.data.message,
           variant: "default",
         });
-        router.push("/sign-in");
+        router.push(`/interests/${params.username}`);
       } else {
         toast({
           title: "code verification failed",
@@ -112,4 +112,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

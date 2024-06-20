@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input";
 import { loginSchema } from "@/schemas/LoginSchema";
 import { signIn } from "next-auth/react";
 
-function page() {
+function Page() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
@@ -126,4 +126,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
