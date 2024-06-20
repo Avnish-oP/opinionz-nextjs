@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import axios from "axios";
 import { toast } from "@/components/ui/use-toast";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -34,7 +34,7 @@ const interestsData: Interest[] = [
   // Add more interests as needed
 ];
 
-const Page: React.FC = () => {
+const PageContent: React.FC = () => {
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const router = useRouter();
   const params = useSearchParams();
@@ -80,6 +80,7 @@ const Page: React.FC = () => {
   };
 
   return (
+    
     <div className="min-h-screen p-8 bg-gradient-to-br from-black to-slate-900 text-white">
       <h2 className="text-4xl font-extrabold mb-8 text-center">
         Select Your Interests
@@ -120,6 +121,14 @@ const Page: React.FC = () => {
         </button>
       </div>
     </div>
+  );
+}
+
+const Page: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PageContent />
+    </Suspense>
   );
 };
 
