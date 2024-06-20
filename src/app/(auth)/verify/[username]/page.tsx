@@ -48,7 +48,7 @@ function Page() {
           description: response.data.message,
           variant: "default",
         });
-        router.push(`/interests/${params.username}`);
+        router.push(`/interests?username=${params.username}`);
       } else {
         toast({
           title: "code verification failed",
